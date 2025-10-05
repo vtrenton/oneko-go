@@ -7,7 +7,7 @@
  * http://unlicense.org
  */
 
-package main
+package config
 
 import (
 	"bufio"

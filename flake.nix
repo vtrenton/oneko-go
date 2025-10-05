@@ -44,14 +44,18 @@
 
             inherit buildInputs nativeBuildInputs;
 
+            # Specify subdirectory for main package
+            subPackages = [ "cmd/oneko" ];
+
             # Copy resources to output
             postInstall = ''
               mkdir -p $out/share/oneko
-              cp -r resources $out/share/oneko/
+              cp -r assets/resources $out/share/oneko/
             '';
 
             # Wrap the binary to find resources
             postFixup = ''
+              mv $out/bin/oneko $out/bin/oneko-go
               wrapProgram $out/bin/oneko-go \
                 --chdir $out/share/oneko
             '';

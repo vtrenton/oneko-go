@@ -1,8 +1,6 @@
-# Java build artifacts
-target
-
-# Go binaries
+# Binaries
 neko
+oneko
 *.exe
 *.exe~
 *.dll
@@ -36,3 +34,6 @@ Thumbs.db
 result
 result-*
 .direnv/
+
+# Build artifacts
+target/

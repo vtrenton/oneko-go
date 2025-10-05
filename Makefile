@@ -9,14 +9,12 @@ all: build
 # Install dependencies
 deps:
 	@echo "Installing Go dependencies..."
-	go get github.com/go-gl/glfw/v3.3/glfw
-	go get github.com/jezek/xgb
-	go get github.com/jezek/xgb/xproto
+	go mod download
 
 # Build the binary
 build: deps
 	@echo "Building $(BINARY)..."
-	go build -o $(BINARY)
+	go build -o $(BINARY) ./cmd/oneko
 
 # Run the application
 run: build
